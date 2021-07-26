@@ -13,6 +13,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
+    EditText editMainName, editMainEmail;
     TextView textName,textEmail,textToast;
     View dialogV,toastV;
     EditText editName,editEmail;
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textName =findViewById(R.id.user_name);
-        textEmail = findViewById(R.id.user_email);
+        editMainName = findViewById(R.id.user_name);
+        editMainEmail = findViewById(R.id.user_email);
         Button btn_input = findViewById(R.id.btn_input);
         btn_input.setOnClickListener(btnListener);
     }
@@ -40,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
             dialog.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int i) {
-                    editName = dialogV.findViewById(R.id.dialog_edit_name);
-                    editEmail = dialogV.findViewById(R.id.dialog_edit_email);
-                    textName.setText(editName.getText().toString());
-                    textEmail.setText(editEmail.getText().toString());
+                    editMainName = dialogV.findViewById(R.id.dialog_edit_name);
+                    editMainEmail = dialogV.findViewById(R.id.dialog_edit_email);
+                    textName.setText(editMainName.getText().toString());
+                    textEmail.setText(editMainEmail.getText().toString());
                 }
             });
             dialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
